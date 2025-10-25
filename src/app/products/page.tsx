@@ -76,7 +76,7 @@ export default function ProductsPage() {
       const productRef = doc(db, 'products', editingProduct.id!);
       await updateDoc(productRef, {
         name: editingProduct.name,
-        description: editingProduct.description,
+        description: editingProduct.description || '',
         price: editingProduct.price,
       });
       setEditingProduct(null);
