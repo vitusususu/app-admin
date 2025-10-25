@@ -159,25 +159,25 @@ export default function ProductsPage() {
               <div>
                 <input
                   type="text"
-                  value={editingProduct.name}
+                  value={editingProduct?.name || ''}
                   onChange={(e) =>
-                    setEditingProduct({ ...editingProduct, name: e.target.value })
+                    setEditingProduct({ ...editingProduct!, name: e.target.value })
                   }
                   className="border p-2 mr-2"
                 />
                 <input
                   type="text"
-                  value={editingProduct.description}
+                  value={editingProduct?.description || ''}
                   onChange={(e) =>
-                    setEditingProduct({ ...editingProduct, description: e.target.value })
+                    setEditingProduct({ ...editingProduct!, description: e.target.value })
                   }
                   className="border p-2 mr-2"
                 />
                 <input
                   type="number"
-                  value={editingProduct.price}
+                  value={editingProduct?.price || 0}
                   onChange={(e) =>
-                    setEditingProduct({ ...editingProduct, price: parseFloat(e.target.value) })
+                    setEditingProduct({ ...editingProduct!, price: parseFloat(e.target.value) })
                   }
                   className="border p-2 mr-2"
                 />

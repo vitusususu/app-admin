@@ -47,7 +47,7 @@ export default function StoreConfigPage() {
   const handleUpdateStoreConfig = async () => {
     if (isStoreAdmin && storeId) {
       const storeDocRef = doc(db, 'stores', storeId);
-      await updateDoc(storeDocRef, formData);
+      await updateDoc(storeDocRef, formData as Record<string, any>);
       setStoreConfig(formData);
       setEditMode(false);
     }
